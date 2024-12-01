@@ -2432,7 +2432,7 @@ html.theme-dark .recentMentionsPopout_ddb5b4,
 
 /* Fixes position of unreads at the bottom of the channel list */
 .bottom_eba0ba {
-    transform: translateY(-55px);
+    transform: translateY(-15px);
 }
 
 .unreadIcon_eba0ba {
