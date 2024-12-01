@@ -404,8 +404,8 @@ html.theme-dark .searchOption-351dTI .filter-5YbOzJ {
 }
 
 .newMessagesBar_cf58b5.barBase_cf58b5:hover {
-    padding: 8px 18px !important;
-    width: 105px;
+    padding: 8px 8px !important;
+    width: 55px;
     transition: font-size 0s, color 0.2s 0.1s, padding 0.4s, width 0.1s 50ms;
 }
 
