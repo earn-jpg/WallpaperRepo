@@ -60,7 +60,7 @@
     --text-danger: var(--dnd-color);
     --text-brand: var(--highlight);
     --channels-default: var(--text);
-    --interactive-muted: rgba(180, 180, 180, 0.493);
+    --interactive-muted: 180, 180, 180
     --button-danger-background-disabled: rgba(var(--rgb-close-button), 20%);
     --button-danger-background: rgba(var(--rgb-close-button), 100%);
     --button-danger-background-hover: rgba(var(--rgb-close-button), 70%);
