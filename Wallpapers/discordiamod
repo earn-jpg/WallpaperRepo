@@ -36,7 +36,7 @@
     --transition-time: 0.3s;
     --show-original-title: 0;
     --show-custom-title: 1;
-    --custom-title-text: "Lande della Discordia";
+    --custom-title-text: "le land of earn";
     --custom-title-font-size: 16px;
     --custom-title-font-weight: normal;
     --custom-title-margin-top: 0px;
@@ -45,8 +45,8 @@
     --logo-primary: var(--highlight);
     --control-brand-foreground: var(--highlight);
     --control-brand-foreground-new: var(--highlight);
-    --background-mentioned: rgba(var(--rgb-highlight), 10%);
-    --background-mentioned-hover: rgba(var(--rgb-highlight), 20%);
+    --background-mentioned: (var(--rgb-highlight);
+    --background-mentioned-hover: (var(--rgb-highlight);
     --background-message-hover: color-mix(in oklab,hsl(var(--primary-900-hsl) / 0.06) 100%,hsl(var(--theme-base-color-hsl, 0 0% 0%) / 0.06) var(--theme-base-color-amount, 0%));
     --background-message-highlight: rgba(var(--rgb-highlight), 30%);
     --background-message-highlight-hover: rgba(var(--rgb-highlight), 40%);
