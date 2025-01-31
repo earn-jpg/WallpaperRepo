@@ -56,8 +56,8 @@ html.theme-dark .mentioned__5126c:before {
     --logo-primary: var(--highlight);
     --control-brand-foreground: var(--highlight);
     --control-brand-foreground-new: var(--highlight);
-    --background-mentioned: rgba(var(--accentcolor), 10%);
-    --background-mentioned-hover: rgba(var(--accentcolor), 20%);
+    --background-mentioned: rgb(var(--accentcolor);
+    --background-mentioned-hover: (var(--accentcolor);
     --background-message-hover: color-mix(in oklab,hsl(var(--primary-900-hsl) / 0.06) 100%,hsl(var(--theme-base-color-hsl, 0 0% 0%) / 0.06) var(--theme-base-color-amount, 0%));
     --background-message-highlight: rgba(var(--rgb-highlight), 30%);
     --background-message-highlight-hover: rgba(var(--rgb-highlight), 40%);
