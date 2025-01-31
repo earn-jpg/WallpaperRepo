@@ -25,6 +25,11 @@
     pointer-events: none;
 }
 
+/*custom mentioned colour*/
+html.theme-dark .mentioned__5126c:before {
+    background: linear-gradient(135deg, #3b3b3b, var(--accentcolor)) !important;
+}
+
     /*other*/
     --highlight: rgb(var(--rgb-highlight));
     --highlight-darker: hsl(from var(--highlight) calc(h + 15) s calc(l - 35)); /*color-mix(in srgb,var(--highlight),#000 50%);*/
