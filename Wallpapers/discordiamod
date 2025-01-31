@@ -25,26 +25,6 @@
     pointer-events: none;
 }
 
-html.theme-dark .winButtonClose__421ed:hover,
-html.theme-dark .winButtonMinMax__421ed:nth-child(3):hover,
-html.theme-dark .winButtonMinMax__421ed:nth-child(2n):hover,
-html.theme-light .winButtonClose__421ed:hover,
-html.theme-light .winButtonMinMax__421ed:nth-child(3):hover,
-html.theme-light .winButtonMinMax__421ed:nth-child(2n):hover {
-    background: transparent;
-    transition: 0.1s;
-    backdrop-filter: none;
-}
-
-/* Avoid moving the button hitbox by rotating just the svg */
-.winButton__421ed > svg {
-    transition: 0.1s;
-}
-
-.winButton__421ed:hover > svg {
-    transform: rotate(45deg);
-}
-
 /*custom mentioned colour*/
 html.theme-dark .mentioned__5126c:before {
     background: linear-gradient(135deg, #3b3b3b, var(--accentcolor)) !important;
