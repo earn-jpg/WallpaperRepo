@@ -560,7 +560,7 @@ html.theme-dark .mentioned__5126c:before {
 }
 
 .mentioned__5126c::before {
-    background-color: var(--highlight)
+    background-color: var(--accentcolor)
 }
 
 .lookFilled__201d5.colorBrand__201d5 { /* forum new post button */
