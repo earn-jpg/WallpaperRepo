@@ -19,6 +19,12 @@
     --background-modifier-hover : rgba(20, 20, 20, 0.500) ;
     --box-shadow: 0 0 10px 0px black;
 
+/*Connection Issue Let Me Be*/
+.container_a2f514 {
+    background: transparent;
+    pointer-events: none;
+}
+
     /*other*/
     --highlight: rgb(var(--rgb-highlight));
     --highlight-darker: hsl(from var(--highlight) calc(h + 15) s calc(l - 35)); /*color-mix(in srgb,var(--highlight),#000 50%);*/
