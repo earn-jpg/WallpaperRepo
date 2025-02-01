@@ -30,6 +30,12 @@ html.theme-dark .mentioned__5126c:before {
     background: linear-gradient(135deg, #3b3b3b, var(--accentcolor)) !important;
 }
 
+::-webkit-scrollbar-thumb {
+    border: none !important;
+    background-clip: content-box !important;
+    background: var(scroller-color) !important;
+}
+
 /*better mark as read button*/
 @keyframes pop {
     from {
@@ -50,9 +56,9 @@ html.theme-dark .mentioned__5126c:before {
     --afk-color: rgb(var(--rgb-afk-color));
     --dnd-color: rgb(var(--rgb-dnd-color));
     --streaming-color: rgb(var(--rgb-streaming-color));
-    --scrollbar-thin-thumb: rgba(var(--scroller), 10%);
-    --scrollbar-auto-thumb: rgba(var(--scroller), 10%);
-    --scrollbar-auto-scrollbar-color-thumb: rgba(var(--scroller), 10%);
+    --scrollbar-thin-thumb: var(--scroller-color)
+    --scrollbar-auto-thumb: var(--scroller-color)
+    --scrollbar-auto-scrollbar-color-thumb: var(--scroller-color)
     --scrollbar-thin-track: transparent;
     --scrollbar-auto-track: transparent;
     --scrollbar-auto-scrollbar-color-track: transparent;
