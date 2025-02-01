@@ -30,12 +30,6 @@ html.theme-dark .mentioned__5126c:before {
     background: linear-gradient(135deg, #3b3b3b, var(--accentcolor)) !important;
 }
 
-::-webkit-scrollbar-thumb {
-    border: none !important;
-    background-clip: content-box !important;
-    background: var(scroller-color) !important;
-}
-
 /*better mark as read button*/
 @keyframes pop {
     from {
