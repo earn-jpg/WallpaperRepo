@@ -1,0 +1,690 @@
+/* 
+* Tokyo Night | v1.0.0
+* By: @dsc.earn, Originally by enkia on Visual Studio Code.
+*/
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=San+Francisco:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+/* By the way, support enkia for making the original theme! */
+body {
+  font-family: SF Pro Display Ultralight, Segoe UI, monospace;
+}
+
+/* Me too, please? */
+
+/* Variables – using original Tokyo Night colors (hopefully)*/
+:root {
+  --color-x: #1a1b26;
+  --color-y: #f7768e;
+  --color-z: #a9b1d6;
+  --color-xbob: #f7768e;
+  --color-ybob: #9ece6a;
+  --color-zbob: #7aa2f7;
+
+  --radius-1: 3px;
+  --radius-2: 3px;
+  --radius-3: 5px;
+}
+
+/* Animations */
+@keyframes slide-right {
+  from { transform: translateX(-18px); }
+  to { transform: translateX(0); }
+}
+@keyframes slide-down {
+  from { transform: translateY(-18px); }
+  to { transform: translateY(0); }
+}
+@keyframes slide-right-slow {
+  from { transform: translateX(-30px); }
+  to { transform: translateX(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* General */
+* {
+  transition: color .2s;
+}
+li {
+  transition: color .2s, background .1s;
+}
+
+/* Header */
+header {
+  padding: 5px 0px 0px;
+  box-sizing: content-box;
+}
+.menu_bar_point {
+  margin: 0px;
+  width: 5px;
+  border-radius: var(--radius-1);
+  text-transform: none;
+  font-size: 13px !important; 
+  min-width: unset !important;
+  width: auto !important; 
+  padding: 2px 6px; 
+}
+.menu_bar_point.opened {
+  background: transparent !important;
+  box-shadow: 0 0 0 0px var(--color-accent);
+}
+
+/* Start Screen */
+#start_screen > content {
+  border-radius: var(--radius-2);
+  overflow: hidden;
+}
+#start-files left ul {
+  overflow: hidden;
+}
+#start-files left li {
+  transition: transform .2s;
+}
+#start-files left li:hover {
+  transform: translateX(8px);
+}
+#start-files right ul {
+  gap: 12px !important;
+}
+#start-files .recent_project {
+  border-radius: var(--radius-2);
+  transition: background .4s, transform .2s;
+}
+
+/* Work Screen */
+#work_screen {
+  grid-template-rows: 40px minmax(200px, 5000px) 26px;
+  height: calc(100% - 64px);
+}
+
+/* Tab Bar */
+#tab_bar {
+  padding: 8px 0;
+  box-sizing: content-box;
+}
+#tab_bar .project_tab {
+  height: 26px;
+  margin: auto 2px;
+  border: 0;
+  border-radius: var(--radius-2);
+  background: var(--color-back) !important;
+}
+#tab_bar .project_tab.selected {
+  background: var(--color-button) !important;
+}
+#tab_bar .project_tab_close_button {
+  margin-top: 3px;
+  transition: all .5s;
+}
+.project_thumbnail {
+  margin-top: 4px;
+  border: 2px solid var(--color-button);
+  border-radius: var(--radius-2);
+  box-shadow: unset;
+  animation: slide-right .3s, fade-in .3s;
+}
+
+/* Main Toolbar */
+#main_toolbar {
+  padding: 4px 8px;
+  background: var(--color-back);
+  position: relative;
+}
+ 
+.menu_separator{
+  display: none !important;
+}
+
+/* Bars */
+#left_bar,
+#right_bar {
+  padding: 0 6px;
+  background: var(--color-back);
+}
+
+/* Panels */
+.panel > * {
+  margin: 8px 0;
+}
+.panel .panel_inside > * {
+  margin: 3px 0;
+}
+
+/* UV Editor */
+#project_resolution_status {
+  transform: translateY(-10px);
+}
+#uv_frame {
+  background: var(--color-dark);
+}
+
+/* Texture List */
+#texture_list {
+  padding: 8px;
+}
+.texture {
+  padding: 4px 12px;
+  margin: 2px 0;
+  height: 56px;
+  background: transparent;
+  transition: background .2s, box-shadow .2s, transform .2s;
+}
+.texture.selected {
+  background: var(--color-selected);
+  box-shadow: none;
+  transform: translateX(0) !important;
+}
+.texture:hover {
+  box-shadow: none;
+  transform: translateX(4px);
+}
+.texture > *,
+.texture:hover > * {
+  transition: none;
+}
+.texture_icon {
+  border-radius: var(--radius-1);
+}
+
+/* Cubes List */
+#cubes_list {
+  padding: 8px;
+}
+.outliner_object {
+  transition: background .2s;
+}
+.group,
+.cube {
+  padding: 0 8px;
+  transition: none;
+}
+.group.selected,
+.cube.selected {
+  box-shadow: none;
+  transform: translateX(0) !important;
+}
+.group:hover,
+.cube:hover {
+  transform: translateX(-4px);
+}
+.group > *,
+.cube > * {
+  transition: none;
+}
+.group:hover > *,
+.cube:hover > * {
+  transform: translateX(-4px);
+}
+.cube:hover .cube_name,
+.group:hover .cube_name {
+  color: var(--color-light);
+}
+
+/* Color Panel */
+#color {
+  padding: 0 8px;
+}
+#color_panel_wrapper .bar {
+  border-radius: var(--radius-1);
+  background: var(--color-selected);
+}
+#color_panel_wrapper .bar input:checked+label {
+  border-bottom: 0 !important;
+  color: #d960ff;
+}
+#color_panel_wrapper .color_picker {
+  margin-top: 14px;
+}
+#color_panel_head .main {
+  height: 32px;
+  border-radius: 50%;
+}
+#color .sp-container {
+  margin-left: 0 !important;
+}
+#color .sp-picker-container {
+  padding: 6px;
+  animation: unset;
+}
+#color .sp-picker-container .sp-top-inner {
+  bottom: -8px;
+}
+#palette_list {
+  border-radius: var(--radius-2);
+}
+#palette_list .color {
+  margin: 1px;
+}
+
+/* Animations Panels */
+#animations_list {
+  padding: 8px;
+}
+#animations_list .animation {
+  padding: 4px 12px;
+  transition: background .2s, box-shadow .2s, transform .2s;
+}
+#animations_list .animation.selected {
+  background: var(--color-selected);
+  box-shadow: none;
+  transform: translateX(0) !important;
+}
+#animations_list .animation:hover {
+  transform: translateX(4px);
+}
+#animations_list .animation > *,
+#animations_list .animation:hover > * {
+  transition: none;
+}
+#keyframe_bar_x,
+#keyframe_bar_y,
+#keyframe_bar_z {
+  gap: 6px;
+}
+
+/* Context Menu */
+.contextMenu {
+  padding: 8px 4px;
+  margin: 4px 0;
+  min-width: 220px;
+  border: 2px solid #1a1b26;
+  border-radius: var(--radius-2);
+  box-shadow: none;
+  animation: slide-right .15s, fade-in .3s;
+}
+.contextMenu.sub {
+  margin: -14px 16px;
+  animation: slide-down .2s, fade-in .35s;
+}
+.contextMenu li {
+  border-radius: var(--radius-1);
+}
+
+/* Action Selector */
+#action_selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: transparent;
+  box-shadow: none;
+  animation: slide-down .4s ease-out, fade-in .5s ease-out;
+}
+#action_selector #action_search_bar_icon {
+  margin: 4px 0;
+}
+#action_selector_list {
+  align-self: center;
+  padding: 6px;
+  min-width: 220px;
+  border-radius: var(--radius-2);
+  border: 2px solid var(--color-bright_ui);
+  overflow: hidden;
+}
+#action_selector_list ul {
+  background: transparent;
+}
+#action_selector_list li {
+  border-radius: var(--radius-1);
+  transition: background .2s;
+}
+
+/* Dialogs */
+.dialog {
+  border-radius: var(--radius-2);
+  border: 1px solid var(--color-bright_ui);
+  box-shadow: none;
+  animation: slide-down .4s ease-out, fade-in .5s ease-out;
+}
+.dialog_handle {
+  display: flex;
+  padding: 6px;
+  box-sizing: content-box;
+  border-radius: var(--radius-1);
+  border: 1px solid var(--color-accent);
+  background: var(--color-bright_ui);
+}
+.dialog_title {
+  color: var(--color-z);
+  text-transform: uppercase;
+}
+.dialog .next_to_title {
+  margin-top: -36px;
+}
+.dialog_menu_button {
+  padding: 0;
+}
+.dialog_close_button {
+  right: 8px;
+  top: 6px;
+}
+.dialog_close_button:hover {
+  background: var(--color-x) !important;
+}
+.dialog_wrapper {
+  overflow: hidden;
+}
+.dialog_sidebar_pages,
+.dialog_sidebar_actions {
+  padding: 8px;
+}
+.dialog_sidebar_pages li {
+  margin: 8px 0;
+  border-radius: var(--radius-3);
+  transition: text-indent .2s;
+  animation: slide-right-slow .7s ease, fade-in .8s ease;
+}
+.dialog_sidebar_pages li.selected {
+  background: var(--color-selected) !important;
+  text-indent: 0 !important;
+}
+.dialog_sidebar_pages li:hover {
+  text-indent: 4px;
+}
+.dialog_sidebar_actions {
+  border-color: var(--color-dark) !important;
+}
+.dialog_sidebar_actions li {
+  margin: 8px 0;
+  transition: text-indent .2s;
+}
+.dialog_sidebar_actions li:hover {
+  text-indent: 4px;
+}
+.dialog_bar {
+  margin-right: 8px !important;
+}
+.dialog_content .tab_bar .open {
+  border-bottom: none !important;
+  color: var(--color-accent);
+}
+
+/* PE List & CSS Editor */
+#pe_list {
+  margin-top: 56px;
+  padding: 8px;
+  border-radius: var(--radius-2);
+  overflow: hidden;
+}
+#pe_list li {
+  margin: 8px 0;
+  border-radius: var(--radius-1);
+}
+#pe_list li.selected {
+  background: var(--color-selected) !important;
+}
+#pe_list li > *,
+#pe_list li:hover > * {
+  transition: none;
+}
+#pe_list li:hover > * {
+  transform: translateX(8px);
+}
+#css_editor {
+  border-radius: var(--radius-2);
+  border: 0;
+  overflow: hidden;
+}
+.prism-editor__line-numbers {
+  padding-left: 8px;
+}
+
+/* Dialog Vector Groups & Form Elements */
+.dialog_vector_group {
+  gap: 8px;
+}
+input {
+  padding: 2px 17px !important;
+  border-radius: var(--radius-3);
+  transition: transform .1s;
+  box-sizing: content-box;
+  box-shadow: none !important; 
+}
+
+.search_bar {
+  border: 0px solid var(--color-back);
+}
+
+dialog input:hover {
+  border-color: var(--color-accent);
+}
+.dialog_bar input {
+  margin: 4px 0 !important;
+}
+dialog select,
+.keybindslot,
+.keybindslot .key,
+.keybindslot .modifier,
+dialog .current {
+  border-radius: var(--radius-1);
+}
+dialog img {
+  border-radius: var(--radius-2);
+}
+
+/* Tools &  Buttons */
+.tool.widget {
+  border-radius: var(--radius-1);
+  overflow: hidden;
+}
+.tool,
+button,
+bb-select,
+[class$='_button']:not([hidden]),
+[id$='_button']:not([hidden]) {
+  border: none;
+  background: var(--color-back);
+  min-height: 26px;
+  font-size: 13px !important;
+  margin: 2px;
+}
+.tool.enabled,
+.tool.selected {
+  border: none;
+  background: var(--color-button);
+  color: var(--color-selected);
+}
+
+/* Spectrum Pickers & Tooltip */
+.sp-picker-container {
+  padding: 12px;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-2);
+  background: var(--color-back);
+  box-shadow: none;
+  animation: none;
+  box-sizing: content-box;
+}
+.sp-color,
+.sp-hue {
+  border-radius: var(--radius-1);
+  overflow: hidden;
+}
+.sp-alpha {
+  margin: 8px 0;
+  border-radius: var(--radius-1);
+}
+.sp-preview {
+  border-radius: var(--radius-1);
+}
+.sp-top-inner {
+  bottom: 24px;
+}
+.tooltip {
+  margin-top: 30px;
+  padding: 0 10px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-1);
+  background: var(--color-back);
+  box-shadow: none;
+}
+.tooltip_description {
+  margin: 0px 0;
+  border-radius: var(--radius-2);
+}
+
+/* XYZ Color Indicators */
+[n-action]::before {
+  border-width: 5px !important;
+}
+[n-action$='_x']::before,
+[class$='_x'] {
+  border-color: var(--color-xbob) !important;
+  color: var(--color-xbob);
+}
+[n-action$='_y']::before,
+[class$='_y'] {
+  border-color: var(--color-ybob) !important;
+  color: var(--color-ybob);
+}
+[n-action$='_z']::before,
+[class$='_z'] {
+  border-color: var(--color-zbob) !important;
+  color: var(--color-zbob);
+}
+.orbit_gizmo_side[axis] {
+  color: black;
+  transition: none;
+}
+.orbit_gizmo_side[axis='x'] { background: var(--color-xbob); }
+.orbit_gizmo_side[axis='y'] { background: var(--color-ybob); }
+.orbit_gizmo_side[axis='z'] { background: var(--color-zbob); }
+.orbit_gizmo_side[axis]:hover { color: white; }
+
+/* Miscellaneous */
+#project_resolution_status,
+.tool.widget.bar_text.f_right {
+  margin-right: 8px;
+  padding: 0 10px;
+  border-radius: var(--radius-1);
+  background: var(--color-back);
+}
+.tool.widget.bar_text.f_right {
+  max-height: 28px;
+  vertical-align: middle;
+}
+.dark_bordered {
+  border-radius: var(--radius-2);
+}
+.color_x,
+.color_y,
+.color_z,
+.layout_color_preview {
+  border-radius: 50%;
+}
+.setting_element input {
+  padding: 0 !important;
+  text-align: center;
+}
+
+/* Sidebar Shenanigans * /
+/* Ensure the overall container fills the viewport */
+html, body, #start_screen {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make the content container a flex container that stretches its children vertically */
+#start_screen > content {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* Forces children to match the container’s full height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+/* Force the left sidebar to fill its parent's height with no extra spacing */
+#start_screen .start_screen_left {
+  height: 100%;   /* Fill the parent's height */
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;  /* Allow scrolling if needed */
+  box-shadow: none !important;
+  max-height: unset !important;
+  max-width: unset !important;
+  width: 300px !important;
+}
+
+/* Allow the inner list to fill the available vertical space */
+#start_screen .start_screen_left ul {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  max-height: unset !important;
+  max-width: unset !important;
+  width:
+}
+
+/* Right panel remains unchanged */
+#start_screen .start_screen_right {
+  margin-left: 100px !important;
+  flex: 1 !important;
+  max-height: unset !important;
+  max-width: unset !important;
+}
+
+
+
+/* Blockbench logo to imitate VSC logo */
+.blockbench_logo {
+  max-width: 26px;
+  overflow: hidden;
+  height: 20px;
+  object-fit: cover;
+  object-position: left;
+}
+
+/* Searchbar being always there */
+/* (props to Ewan Howell for helping in this) */
+
+#start_screen[style*="display: none;"] {
+  display: block !important;
+  position: absolute;
+  margin-top: 0px; 
+  margin-left: 0px;
+  width: 0%; height: 0%;
+  background: transparent !important;
+  pointer-events: none !important;
+  z-index: 0;
+}
+
+
+#start_screen[style*="display: none;"] > content > section#start_files > .start_screen_left,
+#start_screen[style*="display: none;"] > content > section#start_files > .start_screen_right > h2,
+#start_screen[style*="display: none;"] > content > section#start_files > .start_screen_right > ul,
+#start_screen[style*="display: none;"] > content > section#start_files > .start_screen_right > .button_bar {
+  display: none !important;
+}
+
+#start_screen[style*="display: none;"] #start_screen_view_menu {
+  display: block !important;
+  position: fixed !important;
+  top: 4px;        
+  right: 450px;    
+  z-index: 0;   
+  background: transparent !important;
+  box-shadow: none !important;
+  pointer-events: auto !important; 
+}
+
+#start_screen[style*="display: none;"] #start_screen_view_menu > li.tool {
+  display: none !important;
+}
+
+#start_screen[style*="display: none;"] #start_screen_view_menu .search_bar {
+  display: block !important; 
+  z-index: -1 !important;
+}
